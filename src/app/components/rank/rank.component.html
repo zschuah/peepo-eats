@@ -1,0 +1,144 @@
+<body>
+  <div class="container">
+    <h1 class="text-center py-3 d-none d-sm-block">Pick your favourite!</h1>
+    <h5 class="text-center py-3 d-block d-sm-none">Pick your favourite!</h5>
+
+    <div class="row justify-content-center">
+      <!--COLUMN LEFT-->
+      <div class="col-sm-6 col-lg-4 text-dark mb-3">
+        <div class="card h-100">
+          <img
+            (click)="playTwoFoods(1)"
+            class="card-image-top img-fluid"
+            [src]="food1.imgPath"
+            alt="{{ food1.name }}"
+          />
+          <div class="card-body d-none d-sm-block">
+            <div class="card-title">
+              <h3>{{ food1.name }}</h3>
+            </div>
+            <div class="card-text">
+              <p>{{ food1.description }}</p>
+              <p>
+                Rating: {{ food1.rating | number: "1.0-0" }}
+                <span
+                  class="badge"
+                  [ngClass]="{
+                    'badge-success': food1.ratingChange >= 0,
+                    'badge-danger': food1.ratingChange < 0
+                  }"
+                >
+                  {{ food1.ratingChange | number: "1.0-0" }}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--COLUMN MID-->
+      <div class="col-sm-1 align-self-center d-none d-lg-block">
+        <h1 class="text-center">VS</h1>
+      </div>
+
+      <!--COLUMN RIGHT-->
+      <div class="col-sm-6 col-lg-4 text-dark mb-3">
+        <div class="card h-100">
+          <img
+            (click)="playTwoFoods(-1)"
+            class="card-image-top img-fluid"
+            [src]="food2.imgPath"
+            alt="{{ food2.name }}"
+          />
+          <div class="card-body d-none d-sm-block">
+            <div class="card-title">
+              <h3>{{ food2.name }}</h3>
+            </div>
+            <div class="card-text">
+              <p>{{ food2.description }}</p>
+              <p>
+                Rating: {{ food2.rating | number: "1.0-0" }}
+                <span
+                  class="badge"
+                  [ngClass]="{
+                    'badge-success': food2.ratingChange >= 0,
+                    'badge-danger': food2.ratingChange < 0
+                  }"
+                >
+                  {{ food2.ratingChange | number: "1.0-0" }}
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--END OF COLUMNS-->
+    </div>
+
+    <!--Comparisons row-->
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p>
+          <strong>{{ compCounter | number }}</strong> successful comparisons!
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <p
+          class="text-right text-muted"
+          data-toggle="modal"
+          data-target="#myModal"
+          style="cursor: pointer;"
+        >
+          How does it work?
+        </p>
+
+        <!-- MODAL -->
+        <div class="modal text-dark" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">How does it work?</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Hello there, welcome to PeepoEats!</p>
+                <p>
+                  In PeepoEats, YOU get to decide how popular each food item is!
+                  Each food item was given an initial starting rating of 1200.
+                  With every pick, the rating will
+                  <span class="badge badge-success">increase</span>
+                  or
+                  <span class="badge badge-danger">decrease</span>
+                  by a maximum of 30 points. This algorithm is based on the
+                  Chess Elo rating system, where the difference between the
+                  ratings of the winner and loser determines the total number of
+                  points gained or lost after a game.
+                </p>
+                <p>
+                  Do check out the leaderboard section for the top food items.
+                  Have fun!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--END OF MODAL-->
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 50px;"></div>
+
+  <footer class="fixed-bottom bg-warning py-1">
+    <div class="container">
+      <small class="text-dark float-right">
+        Copyright &copy; 2020 zschuah. All Rights Reserved.
+      </small>
+    </div>
+  </footer>
+</body>

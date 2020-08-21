@@ -1,0 +1,73 @@
+<body>
+  <div class="container">
+    <h1 class="text-center py-3 d-none d-md-block">
+      Check out the top food items!
+    </h1>
+    <h5 class="text-center py-3 d-block d-md-none">
+      Check out the top food items!
+    </h5>
+
+    <div class="row text-dark">
+      <!--Accordion column-->
+      <div class="col-lg-7 order-2 order-lg-1">
+        <div id="accordion">
+          <div class="card" *ngFor="let food of foodList; let i = index">
+            <a
+              class="my-link"
+              href="#collapse{{ i }}"
+              data-parent="#accordion"
+              data-toggle="collapse"
+            >
+              <div class="card-header my-header">
+                <h5 class="d-flex">
+                  <span class="d-inline-block text-truncate">
+                    {{ food.name }}
+                  </span>
+
+                  <span
+                    class="badge mx-1"
+                    [ngClass]="{
+                      'badge-success': food.ratingChange >= 0,
+                      'badge-danger': food.ratingChange < 0
+                    }"
+                  >
+                    {{ food.ratingChange | number: "1.0-0" }}
+                  </span>
+                  <span class="ml-auto">
+                    {{ food.rating | number: "1.0-0" }}
+                  </span>
+                </h5>
+              </div>
+            </a>
+
+            <div id="collapse{{ i }}" class="collapse">
+              <div class="card-body">
+                <img class="rounded mx-auto d-block" [src]="food.imgPath" />
+                <h6 class="card-title text-center">{{ food.name }}</h6>
+                <hr />
+                <p class="card-text">{{ food.description }}</p>
+              </div>
+            </div>
+
+            <!--END OF CARD BODY-->
+          </div>
+        </div>
+      </div>
+
+      <!--Charts column-->
+      <div class="col-lg-5 mb-3 order-1 order-lg-2">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 50px;"></div>
+
+  <footer class="fixed-bottom bg-warning py-1">
+    <div class="container">
+      <small class="text-dark float-right">
+        Copyright &copy; 2020 zschuah. All Rights Reserved.
+      </small>
+    </div>
+  </footer>
+</body>

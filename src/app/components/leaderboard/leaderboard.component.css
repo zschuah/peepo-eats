@@ -1,0 +1,32 @@
+body {
+  background-color: #031927;
+  color: white;
+}
+
+.my-link {
+  color: #031927;
+}
+.my-link:hover {
+  color: #031927;
+  text-decoration: none;
+}
+
+.my-header {
+  transition: background 0.5s ease;
+}
+.my-header:hover {
+  background: #031927;
+  color: white;
+}
+
+img {
+  max-width: 300px;
+}
+@media (max-width: 400px) {
+  img {
+    max-width: 200px;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+}
