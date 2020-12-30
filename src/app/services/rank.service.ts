@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class RankService {
   //HARDCODED DATA
   compCounter: number = 0;
-  foodList: Food[] = [
+  private foodList: Food[] = [
     new Food(
       'Satay',
       'Some delicious satay',
@@ -46,7 +46,7 @@ export class RankService {
     ),
   ];
 
-  foodListFinal: Food[] = [
+  private foodListFinal: Food[] = [
     new Food(
       'Turkey Bacon Sandwich',
       'Egg Stop. Really generous with their scrambled eggs.',
@@ -294,10 +294,73 @@ export class RankService {
     ),
   ];
 
+  private secretList: Food[] = [
+    new Food(
+      'Briand',
+      'Ohayou!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5603AQE0bsDHRuGdLA/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=_t_8cw0XlFJcl054_xU-GX-NsvK3rVxnxfVy-1R3Na8'
+    ),
+    new Food(
+      'Nigel',
+      'Bye for now!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5103AQGo-tRuG5UNGA/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=nvS8i6pqQTsUZqdEYuMEyrgoK8i6_dhsQMcmB0ITl_Y'
+    ),
+    new Food(
+      'Liz',
+      'Hi guys!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5603AQFJ4p9z6DtknQ/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=6yiRsQqaIPA9Dwszb-BRdGEPbOjGqRruuBC58I7Ab_4'
+    ),
+    new Food(
+      'Charlotte',
+      'Hi guys!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5603AQFXkh1IgQchPg/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=eXSKs8fJOjne_FlOpF7P_YdaYn2ctIxPuM1qWi40jbM'
+    ),
+    new Food(
+      'Franki',
+      'Hi guys!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5603AQFJmBN3knUwjg/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=VYDYzXCAQw7-ZIqSFYGOkr_KOyzzigYlrOJXNGFCAKw'
+    ),
+    new Food(
+      'Hamsi',
+      'Hello everybody!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5103AQEavFl0bylnRg/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=Ouz2PPBGrwiCP3yZ_dvnke0s3uCfAzAK8w3bZ2UQZFA'
+    ),
+    new Food(
+      'Cherry',
+      'Hi guys',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5103AQGwx3-7U91xzg/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=zWKNmrKgcjjnvDrVbbw0WjDoLjRsiMEQdpyKZuL1LPQ'
+    ),
+    new Food(
+      'Katy',
+      'Hi guys!',
+      1200,
+      0,
+      'https://media-exp1.licdn.com/dms/image/C5603AQGWrcHYjdOkeA/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=ZYdcnrSQMGH8NpS35Dz3usc3IpAcNuV871VlEPvuxbY'
+    ),
+  ];
+
   constructor(private http: HttpClient) {}
 
   getFoodList() {
     return this.foodListFinal;
+  }
+
+  getSecretList() {
+    return this.secretList;
   }
 
   addFoodToFirebase(food: Food) {
