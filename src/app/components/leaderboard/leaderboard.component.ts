@@ -15,7 +15,7 @@ export class LeaderboardComponent implements OnInit {
   foodListChart: Food[];
 
   //SET TRUE FOR TESTING
-  isHardcodedD11ata: boolean = true;
+  isHardcodedD11ata: boolean = false;
 
   constructor(private rankService: RankService) {}
 

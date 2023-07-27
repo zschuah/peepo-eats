@@ -91,7 +91,7 @@
           class="text-right text-muted"
           data-toggle="modal"
           data-target="#myModal"
-          style="cursor: pointer;"
+          style="cursor: pointer"
         >
           How does it work?
         </p>
@@ -132,7 +132,12 @@
     </div>
   </div>
 
-  <div style="height: 50px;"></div>
+  <div style="height: 50px"></div>
+
+  <!--TO PRELOAD ALL IMAGES-->
+  <div *ngFor="let food of foodList; let i = index" style="display: none">
+    <img [src]="food.imgPath" />
+  </div>
 
   <footer class="fixed-bottom bg-warning py-1">
     <div class="container">

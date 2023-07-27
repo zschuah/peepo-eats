@@ -5,12 +5,12 @@ body {
 
 @media (min-width: 576px) {
   img {
-    filter: brightness(50%);
+    filter: brightness(70%);
     transition: filter 0.3s ease;
     cursor: pointer;
   }
   img:hover {
     filter: brightness(100%);
-    border: 3px solid red;
+    outline: 2px solid red;
   }
 }
