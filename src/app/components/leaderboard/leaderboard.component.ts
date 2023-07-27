@@ -15,12 +15,12 @@ export class LeaderboardComponent implements OnInit {
   foodListChart: Food[];
 
   //SET TRUE FOR TESTING
-  isHardcodedD11ata: boolean = false;
+  isHardcodedData: boolean = false;
 
   constructor(private rankService: RankService) {}
 
   ngOnInit(): void {
-    if (this.isHardcodedD11ata) {
+    if (this.isHardcodedData) {
       //Getting hardcoded data from service
       this.foodList = this.rankService.getFoodList();
       console.log(this.foodList);
