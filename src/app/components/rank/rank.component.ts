@@ -32,7 +32,7 @@ export class RankComponent implements OnInit {
   //SET TRUE TO ADD HARDCODED DATA TO FIREBASE
   isAddHardcodedToFirebase: boolean = false;
   //SET TRUE FOR TESTING
-  isHardcodedData: boolean = false;
+  isHardcodedData: boolean = true;
 
   constructor(private rankService: RankService) {}
 
